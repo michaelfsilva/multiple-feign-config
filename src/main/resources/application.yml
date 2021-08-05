@@ -1,0 +1,43 @@
+logging:
+  level:
+    '*': ERROR
+    com:
+      example:
+        feignconfig:
+          '*': INFO
+ribbon:
+  eureka:
+    enabled: false
+  restclient:
+    enabled: false
+
+##################################################
+
+microservice:
+  foo:
+    feign:
+      connect-timeout: 1000
+      read-timeout: 5000
+      #    hystrix:
+      #            enabled: true
+  #      timeout: 5000
+  bar:
+    feign:
+      connect-timeout: 1000
+      read-timeout: 2000
+      #    hystrix:
+      #            enabled: true
+#      timeout: 2000
+
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1000
+        readTimeout: 2000
+      fooValue:
+        connectTimeout: 1000
+        readTimeout: 5000
+  hystrix:
+    enabled: false
